@@ -1,0 +1,65 @@
+from colorama import Fore, Back, init, Style
+'''
+Libreria para aplicar color
+en programas Python3 con interfaz
+de texto
+@author Alberto Miguel Martinez Jimenez
+@version 1.2
+'''
+
+init()
+'''
+colores disponibles: ROJO,VERDE,AMARILLO,AZUL,MAGENTA,CIAN,BLANCO
+Ejemplo de uso: colorin('ROJO','VERDE','hola mundo')
+'''
+def colorin(cFondo,cTexto,texto):
+	if(cFondo=='ROJO'):
+		cFondo=Back.RED 
+	elif(cFondo=='VERDE'):
+		cFondo=Back.GREEN
+	elif(cFondo=='AMARILLO'):
+		cFondo=Back.YELLOW
+	elif(cFondo=='AZUL'):
+		cFondo=Back.BLUE
+	elif(cFondo=='MAGENTA'):
+		cFondo=Back.MAGENTA
+	elif(cFondo=='CIAN'):
+		cFondo=Back.CYAN
+	elif(cFondo=='BLANCO'):
+		cFondo=Back.WHITE
+	
+	else:
+		'si no reconoce el color
+		'aplica el negro
+		cFondo=Back.BLACK
+	
+		
+	if(cTexto=='ROJO'):
+		cTexto==Fore.RED
+	elif(cTexto=='VERDE'):
+		cTexto=Fore.GREEN
+	elif(cTexto=='AMARILLO'):
+		cTexto=Fore.YELLOW
+	elif(cTexto=='AZUL'):
+		cTexto=Fore.BLUE
+	elif(cTexto=='MAGENTA'):
+		cTexto=Fore.MAGENTA
+	elif(cTexto=='CIAN'):
+		cTexto=Fore.CYAN
+	elif(cTexto=='BLANCO'):
+		cTexto=Fore.WHITE
+
+	else:
+		'si no reconoce el color
+		'aplica el blanco
+		cTexto=Fore.WHITE
+	
+	print(cFondo+" "+cTexto+" "+texto,end="")
+	'cuando pinta la linea resetea el estilo
+	print(Style.RESET_ALL)	
+		
+if __name__ == "__main__":
+	colorin('ROJO','VERDE','hola soy un gnomo malo')
+	colorin('VERDE','ROJO','WIKI PONEY')
+	print("hola")
+	colorin('AZUL','AMARILLO','NOCILLA')
